@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+body {
+  background-color: var(--color-background, #FAF9FC);
+  color: var(--color-gray-900, #302C3B);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.card-soft {
+  @apply bg-white border border-lavender-light rounded-2xl shadow-soft;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-transparent font-medium rounded-xl text-white bg-lavender hover:bg-lavender-dark transition-colors duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lavender disabled:opacity-50;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-4 py-2 border border-lavender-light font-medium rounded-xl text-gray-900 bg-white hover:bg-lavender-light/30 transition-colors duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lavender disabled:opacity-50;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
