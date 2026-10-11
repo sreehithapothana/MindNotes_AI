@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { BookOpen, Loader, FileCheck, AlertCircle, RefreshCw, Download, HelpCircle } from 'lucide-react';
-import api from '../services/api';
+import api, { API_BASE_URL } from '../services/api';
 
 export default function StudyNotes() {
   const { id } = useParams();
@@ -40,7 +40,7 @@ export default function StudyNotes() {
 
   const handleExport = (format) => {
     const token = localStorage.getItem('token');
-    const url = `http://localhost:5000/api/export/${format}/${id}?token=${token}`;
+    const url = `${API_BASE_URL}/export/${format}/${id}?token=${token}`;
     window.open(url, '_blank');
   };
 

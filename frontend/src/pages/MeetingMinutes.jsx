@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { FileText, Loader, CheckSquare, Users, AlertCircle, RefreshCw, Download } from 'lucide-react';
-import api from '../services/api';
+import api, { API_BASE_URL } from '../services/api';
 
 export default function MeetingMinutes() {
   const { id } = useParams();
@@ -40,7 +40,7 @@ export default function MeetingMinutes() {
 
   const handleExport = (format) => {
     const token = localStorage.getItem('token');
-    const url = `http://localhost:5000/api/export/${format}/${id}?token=${token}`;
+    const url = `${API_BASE_URL}/export/${format}/${id}?token=${token}`;
     window.open(url, '_blank');
   };
 
